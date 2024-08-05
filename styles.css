@@ -19,7 +19,7 @@ body, html {
 .desktop-nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 5px 0;
     position: fixed; /* Change to fixed so it stays at the top */
@@ -31,28 +31,9 @@ body, html {
 .logo-name {
     font-size: 3rem;
     color: #fff;
-    margin-left: 100px;
+    text-align: center;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    font-size: 1.5rem;
-    margin-right: 100px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #162745;
-    text-decoration: underline;
-    text-underline-offset: 1rem;
-    text-decoration-color: #203252;
-}
 
 #Home {
     background-image: url('img/bg1.jpg');

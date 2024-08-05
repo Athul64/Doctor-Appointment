@@ -163,6 +163,74 @@
             background-color: #fff;
             color: #345cc4;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="message"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #345cc4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #203252;
+        }
     </style>
 </head>
 <body>
@@ -173,10 +241,7 @@
     <div class="sidebar">
         <ul>
             <li><a href="#" onclick="navigateToAppointment()">Appointments</a></li>
-            <li><a href="#">Patients</a></li>
-            <li><a href="#">Billing</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="#" onclick="openModal()">Contact Us</a></li>
         </ul>
     </div>
     <div class="main-content">
@@ -213,7 +278,7 @@
                         <div class="card-content" onclick="navigateToGas()">
                             <img src="../img/file.png" alt="icons">
                             <p>09 Lakh+ <br>Rx Written</p>
-                            <img src="../img/stomach.png" alt="Cardiologist">
+                            <img src="../img/stomach.png" alt="Gastroenterologist">
                         </div>
                     </div>
                     <div class="card" style="background-color: #2A80B9;">
@@ -221,7 +286,7 @@
                         <div class="card-content">
                             <img src="../img/file.png" alt="icons">
                             <p>13 Lakh+ <br>Rx Written</p>
-                            <img src="../img/kidney.png" alt="Cardiologist">
+                            <img src="../img/kidney.png" alt="Nephrologist">
                         </div>
                     </div>
                     <div class="card" style="background-color: #F1C50E;">
@@ -229,7 +294,7 @@
                         <div class="card-content">
                             <img src="../img/file.png" alt="icons">
                             <p>40 Lakh+ <br>Rx Written</p>
-                            <img src="../img/endocrinology.png" alt="Cardiologist">
+                            <img src="../img/endocrinology.png" alt="Endocrinologist">
                         </div>
                     </div>
                     <div class="card" style="background-color: #9C56B8;">
@@ -237,7 +302,7 @@
                         <div class="card-content">
                             <img src="../img/file.png" alt="icons">
                             <p>63 Lakh+ <br>Rx Written</p>
-                            <img src="../img/diabetes.png" alt="Cardiologist">
+                            <img src="../img/diabetes.png" alt="Diabetologist">
                         </div>
                     </div>
                     <div class="card" style="background-color: #685BBB;">
@@ -245,7 +310,7 @@
                         <div class="card-content">
                             <img src="../img/file.png" alt="icons">
                             <p>06 Lakh+ <br>Rx Written</p>
-                            <img src="../img/pulmonology.png" alt="Cardiologist">
+                            <img src="../img/pulmonology.png" alt="Pulmonologist">
                         </div>
                     </div>
                     <div class="card" style="background-color: #00BE9C;">
@@ -253,13 +318,31 @@
                         <div class="card-content">
                             <img src="../img/file.png" alt="icons">
                             <p>1.07 Crore+ <br>Rx Written</p>
-                            <img src="../img/consulting.png" alt="Cardiologist">
+                            <img src="../img/consulting.png" alt="Consulting Physician">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <input type="message" id="message" name="message" required><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
     <script>
         function navigateToBackh() {
             window.location.href = "../index.html";
@@ -275,6 +358,26 @@
 
         function navigateToAppointment(){
             window.location.href="appointment.html"
+        }
+
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Successfully sent");
+            closeModal();
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
         }
     </script>
 </body>

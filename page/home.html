@@ -283,7 +283,7 @@
                     </div>
                     <div class="card" style="background-color: #2A80B9;">
                         <h3>Nephrologist</h3>
-                        <div class="card-content">
+                        <div class="card-content"  onclick="navigateTonep()">
                             <img src="../img/file.png" alt="icons">
                             <p>13 Lakh+ <br>Rx Written</p>
                             <img src="../img/kidney.png" alt="Nephrologist">
@@ -291,7 +291,7 @@
                     </div>
                     <div class="card" style="background-color: #F1C50E;">
                         <h3>Endocrinologist</h3>
-                        <div class="card-content">
+                        <div class="card-content" onclick=" navigateToend()">
                             <img src="../img/file.png" alt="icons">
                             <p>40 Lakh+ <br>Rx Written</p>
                             <img src="../img/endocrinology.png" alt="Endocrinologist">
@@ -299,7 +299,7 @@
                     </div>
                     <div class="card" style="background-color: #9C56B8;">
                         <h3>Diabetologist</h3>
-                        <div class="card-content">
+                        <div class="card-content" onclick=" navigateTodia()">
                             <img src="../img/file.png" alt="icons">
                             <p>63 Lakh+ <br>Rx Written</p>
                             <img src="../img/diabetes.png" alt="Diabetologist">
@@ -307,7 +307,7 @@
                     </div>
                     <div class="card" style="background-color: #685BBB;">
                         <h3>Pulmonologist</h3>
-                        <div class="card-content">
+                        <div class="card-content" onclick=" navigateTopul()">
                             <img src="../img/file.png" alt="icons">
                             <p>06 Lakh+ <br>Rx Written</p>
                             <img src="../img/pulmonology.png" alt="Pulmonologist">
@@ -315,7 +315,7 @@
                     </div>
                     <div class="card" style="background-color: #00BE9C;">
                         <h3>Consulting Physician</h3>
-                        <div class="card-content">
+                        <div class="card-content"  onclick=" navigateTophy()">
                             <img src="../img/file.png" alt="icons">
                             <p>1.07 Crore+ <br>Rx Written</p>
                             <img src="../img/consulting.png" alt="Consulting Physician">
@@ -349,15 +349,36 @@
         }
 
         function navigateToCardo(){
-            window.location.href="cardo.html";
+            window.location.href="Cardiologist.html";
         }
         
         function navigateToGas(){
             window.location.href="Gastroenterologist.html";
         }
 
+        function navigateTonep(){
+            window.location.href="Nephrologist.html";
+        }
+
+        function navigateToend(){
+            window.location.href="Endocrinologist.html";
+        }
+
+        function navigateTodia(){
+            window.location.href="Diabetologist.html";
+        }
+
+        function navigateTopul(){
+            window.location.href="Pulmonologist.html";
+        }
+
+        function navigateTophy(){
+            window.location.href="Consulting Physician.html";
+        }
+
+
         function navigateToAppointment(){
-            window.location.href="appointment.html"
+            window.location.href="appointment.html";
         }
 
         function openModal() {

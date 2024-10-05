@@ -115,20 +115,25 @@
             justify-content: center;
             gap: 20px;
         }
-
         .card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            width: 200px;
-            text-align: center;
-            cursor: pointer;
-            margin-right: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Enlarges the card slightly on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increases shadow for more emphasis */
+}
 
         .card-content {
             display: flex;
